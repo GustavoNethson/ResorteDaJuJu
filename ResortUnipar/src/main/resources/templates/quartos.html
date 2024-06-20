@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Quartos</title>
+</head>
+<body>
+    <h1>Listar Quartos</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Vista Mar</th>
+            <th>Valor diaria</th>
+            <th>Capacidade Maxima</th>
+            <th>Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="quartos : ${quartos}">
+            <td th:text="${quartos.nIdQuarto}"></td>
+            <td th:text="${quartos.stNomeQuarto}"></td>
+            <td th:text="${quartos.boVistaMar}"></td>
+            <td th:text="${quartos.doValorDiaQuarto}"></td>
+            <td th:text="${quartos.nQtdeMaxOcupantes}"></td>
+            <td th:text="${quartos.stStatusQuarto}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
