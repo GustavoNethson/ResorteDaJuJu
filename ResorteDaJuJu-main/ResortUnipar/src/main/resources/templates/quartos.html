@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Quartos</title>
+</head>
+<body>
+    <h2>LISTAR QUARTOS</h2>
+
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>NOME</th>
+            <th>VISTA MAR</th>
+            <th>VALOR DIARIA</th>
+            <th>CAPACIDADE MÁXIMA</th>
+            <th>STATUS</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="quartos : ${quartos}">
+            <td th:text="${quartos.nIdQuarto}"></td>
+            <td th:text="${quartos.stNomeQuarto}"></td>
+            <td th:text="${quartos.boVistaMar}"></td>
+            <td th:text="${quartos.doValorDiaQuarto}"></td>
+            <td th:text="${quartos.nQtdeMaxOcupantes}"></td>
+            <td th:text="${quartos.stStatusQuarto}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

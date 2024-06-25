@@ -1,0 +1,29 @@
+Requisitos:
+    - Cadastro de quarto (qtdMaxOcupantes, vistaMar, valor, descricao);
+        - regra de negócio (se vista pro mar = true ? valor * 2);
+    - Controlar entrada e saída de hospedes;
+        - Cadastro do cliente/hospede (nome, cpf, telefone, rg, idade);
+            regra de negócio 
+                         só maior de idade;
+                         tempo mínimo 2 dias;
+        - Controle de quarto:
+            - disponíveis só quando não tiver reserva na data;
+            - pra facilitar nosso checkin e checkout é sempre 14:00;
+                regra de checkin: o hospede com posse do numero da reserva,
+                                  o atendente muda o status da reserva para "aberto";
+                regra de checkout: o hospede com posse do numero da reserva,
+                                   o atendente verifica se o status está "aberto",
+                                   confere o valor total, recebe o valor e altera o status para "fechado";
+   
+   
+    STATUS DA RESERVA:
+        - PENDENTE (se tem reserva e não fez check-in);
+        - ABERTO (se tem reserva e fez check-in);
+        - FECHADO (se tem reserva e fez check-out);
+       
+   
+    TELAS:
+        Cadastro de Cliente/Hospede (inclusão, alteração, buscarTodos e buscarPorID);
+        Cadastro de Reserva (inclusão, alteração, buscarTodos e buscarPorID);
+            Controle de Reserva (buscarTodasReservasPorHospede, buscarPorID, buscarPorDataCheckin);
+        Tela de Consulta de Quartos (buscarTodosDisponiveis, buscarPorQtdOcupantes, buscarTodosOcupados, buscarTodosComVistaMarEDisponiveis);
