@@ -17,7 +17,6 @@ import java.util.List;
 @Controller
 public class QuartoController {
 
-
     private final QuartoService quartoService;
 
     @Autowired
@@ -25,12 +24,12 @@ public class QuartoController {
         this.quartoService = quartoService;
     }
 
-    @GetMapping
+    @GetMapping(path = "/quartos")
     public ResponseEntity<List<Quarto>> getAll() {
         return ResponseEntity.ok(quartoService.getAll());
     }
 
-    @PostMapping
+    @PostMapping(path = "/quartos")
     public ResponseEntity<Quarto> createQuarto(@RequestBody Quarto quarto) {
         Quarto salvarQuarto = quartoService.save(quarto);
         return new ResponseEntity<>(salvarQuarto, HttpStatus.CREATED);

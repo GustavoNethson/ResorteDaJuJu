@@ -27,8 +27,8 @@ public class QuartoService {
         return this.quartoRepository.save(quarto);
     }
 
-    public Quarto buscaQuartoPorId(Integer nIdQuarto) {
-        return this.quartoRepository.findByNIdQuarto(nIdQuarto);
+    public Quarto buscaQuartoStatus(String stStatusQuarto) {
+        return this.quartoRepository.findByStStatusQuarto(stStatusQuarto);
     }
 
     public Quarto buscaQuartoPelaCapacidade(Integer nQtdeMaxOcupantes) {

@@ -1,9 +1,11 @@
 package br.unipar.programacaointernet.resortunipar.service;
 
+import br.unipar.programacaointernet.resortunipar.model.Hospede;
 import br.unipar.programacaointernet.resortunipar.model.Reserva;
 import br.unipar.programacaointernet.resortunipar.repository.ReservaRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -35,6 +37,22 @@ public class ReservaService {
 
     public void delete(Reserva reserva) {
         this.reservaRepository.delete(reserva);
+    }
+
+    public List<Reserva> findByHospede(Hospede hospede) {
+        return this.reservaRepository.findByHospede(hospede);
+    }
+
+    public Reserva buscaPeloId(Integer nIdReserva) {
+        return this.reservaRepository.findByNIdReserva(nIdReserva);
+    }
+
+    public Reserva buscaPelaEntrada(Date dDataEntrada){
+        return this.reservaRepository.findByDDataEntrada(dDataEntrada);
+    }
+
+    public Reserva buscarPeloIdDaReservaEDoHospede(Integer nIdReserva, Integer nIdHospede){
+        return this.reservaRepository.findByNIdReservaAndNIdHospede(nIdReserva, nIdHospede);
     }
 
 }

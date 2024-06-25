@@ -12,4 +12,6 @@ public class ResortUniparApplication {
         SpringApplication.run(ResortUniparApplication.class, args);
     }
 
+
+
 }

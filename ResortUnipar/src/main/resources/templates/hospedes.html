@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Quartos</title>
+</head>
+<body>
+<h2>LISTAR HOSPEDES</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>NOME</th>
+        <th>TELEFONE</th>
+        <th>CFP</th>
+        <th>RG</th>
+        <th>DATA NASCIMENTO</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="hospedes : ${hospedes}">
+        <td th:text="${hospedes.nIdHospede}"></td>
+        <td th:text="${hospedes.stNomeHospede}"></td>
+        <td th:text="${hospedes.stTelefoneHospede}"></td>
+        <td th:text="${hospedes.stCpfHospede}"></td>
+        <td th:text="${hospedes.stRgHospede}"></td>
+        <td th:text="${hospedes.dDatNascHospede}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

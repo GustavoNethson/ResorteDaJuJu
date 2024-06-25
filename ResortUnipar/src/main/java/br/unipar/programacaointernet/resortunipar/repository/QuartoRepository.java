@@ -8,7 +8,7 @@ import java.util.List;
 
 @Repository
 public interface QuartoRepository extends JpaRepository<Quarto, Integer> {
-        Quarto findByNIdQuarto(Integer nIdQuarto);
+        Quarto findByStStatusQuarto(String stStatusQuarto);
         Quarto findByNQtdeMaxOcupantes(Integer nQtdeMaxOcupantes);
         Quarto findByVistaMarOcupado(boolean vistaMar, String stStatusQuarto);
 }

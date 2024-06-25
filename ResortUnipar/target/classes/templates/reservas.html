@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Quartos</title>
+</head>
+<body>
+<h2>LISTAR RESERVAS</h2>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>DATA DE ENTRADA</th>
+        <th>DATA DE SAIDA</th>
+        <th>STATUS</th>
+        <th>VALOR</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="reserva : ${reserva}">
+        <td th:text="${reserva.nIdReserva}"></td>
+        <td th:text="${reserva.dDataEntrada}"></td>
+        <td th:text="${reserva.dDataSaida}"></td>
+        <td th:text="${reserva.stStatus}"></td>
+        <td th:text="${reserva.doValorTotal}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
