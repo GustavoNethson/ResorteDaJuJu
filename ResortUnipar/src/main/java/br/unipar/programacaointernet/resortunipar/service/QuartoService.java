@@ -19,31 +19,24 @@ public class QuartoService {
         this.quartoRepository = quartoRepository;
     }
 
-    public List<Quarto> getAll(){
-        return quartoRepository.findAll();
+    public List<Quarto> getAll() {
+        return this.quartoRepository.findAll();
     }
 
-    public Quarto saveQuarto(Quarto quarto) {
-        return quartoRepository.save(quarto);
+    public Quarto save(Quarto quarto) {
+        return this.quartoRepository.save(quarto);
     }
 
-    public Optional<Quarto> findBynIdHospede(Integer nIdHospede) {
-        return this.quartoRepository.findById(nIdHospede);
+    public Quarto buscaQuartoPorId(Integer nIdQuarto) {
+        return this.quartoRepository.findByNIdQuarto(nIdQuarto);
     }
 
-    public void deleteBynIdHospede(Integer nIdHospede) {
-        this.quartoRepository.deleteById(nIdHospede);
+    public Quarto buscaQuartoPelaCapacidade(Integer nQtdeMaxOcupantes) {
+        return this.quartoRepository.findByNQtdeMaxOcupantes(nQtdeMaxOcupantes);
     }
 
-    public List<Quarto> buscarTodosDisponiveis(){
-        return this.quartoRepository.findBystStatusQuarto("Vago");
+    public Quarto buscaQuartoComVistaPaMarEDisponivel(boolean vistaMar, String stStatusQuarto) {
+        return this.quartoRepository.findByVistaMarOcupado(vistaMar, stStatusQuarto);
     }
 
-    public List<Quarto> buscaQuartosPeloNome(String stNomeQuarto){
-        return this.quartoRepository.findByStNomeQuarto(stNomeQuarto);
-    }
-
-    public List<Quarto> buscaQuartoPelaVistaMar(){
-        return this.quartoRepository.findByBoVistaMar(true);
-    }
 }
